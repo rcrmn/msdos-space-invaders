@@ -1,4 +1,4 @@
-/* Roc Ramon Currius 1241370, Gerardo Felix Reichl 1245142 */
+/* Roc Ramon Currius */
 //===================================================================================
 #include <math.h>
 #include <string.h>
@@ -76,7 +76,7 @@
 
 //===================================================================================
 // Per tal que quan pintem qualsevol cosa el cursor no quedi al final, el mourem a
-// aquesta posició:
+// aquesta posiciï¿½:
 #define Cfinal 1
 #define Ffinal DespF+AlssadaTaulell+15
 
@@ -120,6 +120,6 @@ void PosaObjecte(int Pantalla[AlssadaPantalla][AmpladaPantalla], int x, int y, i
 void BorraObjecte(int Pantalla[AlssadaPantalla][AmpladaPantalla],int x,int y);
 
 //===================================================================================
-// Declarem la matriu que representa la pantalla. En aquesta pràctica, la 
+// Declarem la matriu que representa la pantalla. En aquesta prï¿½ctica, la 
 // considerarem com a variable global. Vosaltres NO podeu declarar variables globals!
 
