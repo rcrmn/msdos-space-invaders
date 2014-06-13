@@ -1,4 +1,4 @@
-/* Roc Ramon Currius 1241370, Gerardo Felix Reichl 1245142 */
+/* Roc Ramon Currius */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -39,7 +39,7 @@
 #define SEPARACIO_ESCUTS ((AMPLADA_PANTALLA-(TAMANY_ESCUT*MAX_ESCUTS))/(MAX_ESCUTS+1))
 #define AMPLADA_BUNKER (MAX_ESCUTS * (TAMANY_ESCUT+SEPARACIO_ESCUTS) - SEPARACIO_ESCUTS)
 
-////////////////////// Velocitats bàsiques de moviment, en punts //////////////////////
+////////////////////// Velocitats bï¿½siques de moviment, en punts //////////////////////
 #define VELOCITAT_ALIENS 1
 #define VELOCITAT_ALIENS_BAIXADA 1
 #define VELOCITAT_BALA 1
@@ -70,7 +70,7 @@
 
 #define ESPERA_UFO 55
 
-////////////////////// Posició inicial del joc //////////////////////
+////////////////////// Posiciï¿½ inicial del joc //////////////////////
 #define INICI_ALIENS_X 0
 #define INICI_ALIENS_Y 0
 #define INICI_CANO_X (AMPLADA_PANTALLA/2)
@@ -106,14 +106,14 @@
 #define PROVABILITATS_MILLORA_VIDES 30
 #define MILLORA_VIDES 3
 
-////////////////////// Raons per les que acabarà el joc //////////////////////
+////////////////////// Raons per les que acabarï¿½ el joc //////////////////////
 #define RAO_JOC_ACABAT_NO_ACABAT 0
 #define RAO_JOC_ACABAT_SORTIR 1
 #define RAO_JOC_ACABAT_PERDUT 2
 #define RAO_JOC_ACABAT_GUANYAT 3
 #define RAO_JOC_ACABAT_MORT 4
 
-////////////////////// Inicialització dels dibuixos //////////////////////
+////////////////////// Inicialitzaciï¿½ dels dibuixos //////////////////////
 #define DIBUIX_ALIEN_1 {{4,4,4}, {4,0,4}, {4,0,4}}
 #define DIBUIX_ALIEN_2 {{4,4,4}, {4,0,4}, {0,0,0}}
 #define DIBUIX_ALIEN_3 {{4,4,4}, {0,4,0}, {0,0,0}}
@@ -151,7 +151,7 @@
 #define LE {{7,7,7,7}, {7,0,0,0}, {7,7,7,0}, {7,0,0,0}, {7,7,7,7}}
 #define LADD {{7,0,7,0}, {7,0,7,0}, {7,0,7,0}, {0,0,0,0}, {7,0,7,0}}
 
-////////////////////// Menú //////////////////////
+////////////////////// Menï¿½ //////////////////////
 #define OPCIO_SORTIR 0
 #define MENU \
 	"Tria una opcio:\n\
@@ -524,7 +524,7 @@ void jugarNivell(int *punts, char *nomJugador)
 
 	if (raoJocAcabat == RAO_JOC_ACABAT_NO_ACABAT)
 		raoJocAcabat = RAO_JOC_ACABAT_GUANYAT;
-		//Escriure la raó per la que ha finalitzat el joc
+		//Escriure la raï¿½ per la que ha finalitzat el joc
 	system("cls");
 	switch (raoJocAcabat) 
 	{
@@ -538,7 +538,7 @@ void jugarNivell(int *punts, char *nomJugador)
 			printf("Has destruit els aliens abans que arribessin!.\n");
 			break;
 		case RAO_JOC_ACABAT_MORT:
-			printf("Has perdut totes les teves vides, els alienígenes han guanyat.\n");
+			printf("Has perdut totes les teves vides, els alienï¿½genes han guanyat.\n");
 			break;
 	}
 
@@ -571,7 +571,7 @@ void jugarPartida(int *punts, char *nomJugador)
 	if(raoJocAcabat == RAO_JOC_ACABAT_NO_ACABAT)
 		jugar(nomJugador, &acabarJoc, &raoJocAcabat, punts, 3);
 	
-		//Escriure la raó per la que ha finalitzat el joc
+		//Escriure la raï¿½ per la que ha finalitzat el joc
 	system("cls");
 	
 	if(raoJocAcabat == RAO_JOC_ACABAT_NO_ACABAT)
@@ -589,7 +589,7 @@ void jugarPartida(int *punts, char *nomJugador)
 			printf("Has destruit els aliens abans que arribessin!.\n");
 			break;
 		case RAO_JOC_ACABAT_MORT:
-			printf("Has perdut totes les teves vides, els alienígenes han guanyat.\n");
+			printf("Has perdut totes les teves vides, els alienï¿½genes han guanyat.\n");
 			break;
 	}
 	
@@ -700,7 +700,7 @@ void jugar(char *nomJugador, int *acabarJoc, int *raoJocAcabat, int *punts, int 
 	buidarBales(bales);
 	bales = NULL;
 
-		//Actualitzar la puntuació general
+		//Actualitzar la puntuaciï¿½ general
 	*punts = cano.punts;
 
 }
@@ -827,7 +827,7 @@ void inicialitzaDibuixPlatet (int dibuix[TAMANY_ALIEN][TAMANY_ALIEN])
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////Inicialització de les variables generals per la partida////////////////////////
+///////////////////////////Inicialitzaciï¿½ de les variables generals per la partida////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1025,7 +1025,7 @@ void dibuixarPantalla (int *pantalla, Nau_Propia *cano, Flota_Alien *aliens, Bun
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////Mou el canó////////////////////////////////////////////////////////////////////
+///////////////////////////Mou el canï¿½////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1037,7 +1037,7 @@ void moureCano (int *pantalla, Nau_Propia *cano, int velocitat)
 	
 	tmpX = cano->x + velocitat;
 	
-		//Actualitzar la posició del canó si s'ha de moure
+		//Actualitzar la posiciï¿½ del canï¿½ si s'ha de moure
 	if ( ((tmpX - TAMANY_CANO/2) >= 0) && ((tmpX + TAMANY_CANO/2) < AMPLADA_PANTALLA) ) 
 	{
 		
@@ -1217,8 +1217,8 @@ void moureUfo (Platet *ufo, int *pantalla)
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////Comprova si la bala rebuda per la funció xoca amb el platet, //////////////////
-////////////////////////////////si aquest està actiu. Retorna la llista de bales//////////////////////////
+///////////////////////////Comprova si la bala rebuda per la funciï¿½ xoca amb el platet, //////////////////
+////////////////////////////////si aquest estï¿½ actiu. Retorna la llista de bales//////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1272,7 +1272,7 @@ void eliminaUfo (Platet *ufo, int *pantalla)
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////Crea i situa una nova bala pel canó. Retorna la llista de bales////////////////
+///////////////////////////Crea i situa una nova bala pel canï¿½. Retorna la llista de bales////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1339,7 +1339,7 @@ Bala *dispararBalaCano (int *pantalla, Bala *bales, Nau_Propia *cano)
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////Crea i situa una nova bala pels aliens. La situa tan a prop////////////////////
-///////////////////////////////del canó com calgui. Retorna la llista de bales////////////////////////////
+///////////////////////////////del canï¿½ com calgui. Retorna la llista de bales////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1531,7 +1531,7 @@ void moureAliens (int *pantalla, Flota_Alien *aliens, int *acabarJoc, int *raoJo
 	tmpX = aliens->x + aliens->velocitat;
 	tmpY = aliens->y;
 	
-		//Comprovar si els aliens estan a un cantó de la pantalla
+		//Comprovar si els aliens estan a un cantï¿½ de la pantalla
 	primerViu = -1;
 	ultimViu = -1;
 	
@@ -1570,7 +1570,7 @@ void moureAliens (int *pantalla, Flota_Alien *aliens, int *acabarJoc, int *raoJo
 					for(k=0; k<TAMANY_ALIEN; k++)
 						if(aliens->forma[aliens->vides - (aliens->naus[ultimViu][i].viu)].punts[k][j]!=0 && (k+1)>viuGran) 
 							viuGran = k+1;
-			//Agafar la distància des del punt d'inici dels aliens a l'ultima fila amb un àlien viu
+			//Agafar la distï¿½ncia des del punt d'inici dels aliens a l'ultima fila amb un ï¿½lien viu
 		tmpAlienY = aliens->y + (ultimViu)*(TAMANY_ALIEN+SEPARACIO_ALIENS) + TAMANY_ALIEN - aliens->vides + viuGran;
 		
 		
@@ -1583,7 +1583,7 @@ void moureAliens (int *pantalla, Flota_Alien *aliens, int *acabarJoc, int *raoJo
 			
 			aliens->velocitat = aliens->velocitat * (-1);
 			
-				//Comprovar si toquen el bunker i borrar-ne una part si és així
+				//Comprovar si toquen el bunker i borrar-ne una part si ï¿½s aixï¿½
 			if ( tmpAlienY >= bunker->y && tmpAlienY < (bunker->y + TAMANY_ESCUT) ) 
 			{
 				for (i=0; i<MAX_ESCUTS; i++) 
@@ -1627,7 +1627,7 @@ void moureAliens (int *pantalla, Flota_Alien *aliens, int *acabarJoc, int *raoJo
 		}
 	}
 	
-		//Actualitzar la posició de la flota
+		//Actualitzar la posiciï¿½ de la flota
 	aliens->x = tmpX;
 	aliens->y = tmpY;
 	
@@ -1744,7 +1744,7 @@ Bala *comprovarXocBalaAmbEscut (int *pantalla, Bala *bales, Bala *bala, Bunker *
 		&& (bala->x >= bunker->x) && (bala->y < (bunker->y + TAMANY_ESCUT)) && (bala->y >= bunker->y) ) 
 	{
 		
-			//Mirar si està sobre un escut
+			//Mirar si estï¿½ sobre un escut
 		tmpX = bala->x - bunker->x;
 		tmpY = bala->y - bunker->y;
 		
@@ -1795,7 +1795,7 @@ Bala *comprovarXocBalaAmbEscut (int *pantalla, Bala *bales, Bala *bala, Bunker *
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////Comprova si la bala especificada xoca amb una nau alienígena///////////////////
+///////////////////////////Comprova si la bala especificada xoca amb una nau alienï¿½gena///////////////////
 ///////////////////////////////////Retorna la llista de bales/////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1811,25 +1811,25 @@ Bala *comprovarXocBalaAmbAlien (int *pantalla, Bala *bales, Bala *bala, Flota_Al
 	if ( (bala->x < (aliens->x + AMPLADA_ALIENS)) && (bala->x >= aliens->x) 
 		&& (bala->y < (aliens->y + ALTURA_ALIENS)) && (bala->y >= aliens->y) ) 
 	{
-			//La bala està a l'altura del bloc d'aliens
+			//La bala estï¿½ a l'altura del bloc d'aliens
 		
-			//Obtenim la posició relativa al bloc
+			//Obtenim la posiciï¿½ relativa al bloc
 		tmpX = bala->x - aliens->x;
 		tmpY = bala->y - aliens->y;
 		
-			//Trobar quin àlien és
+			//Trobar quin ï¿½lien ï¿½s
 		j = (tmpX / (TAMANY_ALIEN + SEPARACIO_ALIENS));
 		i = (tmpY / (TAMANY_ALIEN + SEPARACIO_ALIENS));
 		
-			//Si l'alien encara és viu
+			//Si l'alien encara ï¿½s viu
 		if (aliens->naus[i][j].viu) 
 		{
 			
-				//Agafem el mòdul de la posició per saber si la bala coincideix
+				//Agafem el mï¿½dul de la posiciï¿½ per saber si la bala coincideix
 			modX = tmpX % (TAMANY_ALIEN + SEPARACIO_ALIENS);
 			modY = tmpY % (TAMANY_ALIEN + SEPARACIO_ALIENS);
 			
-				//Comprovem si la bala està sobre un àlien
+				//Comprovem si la bala estï¿½ sobre un ï¿½lien
 			if ( (modX < TAMANY_ALIEN) && (modY < TAMANY_ALIEN) ) 
 			{
 				
@@ -1837,7 +1837,7 @@ Bala *comprovarXocBalaAmbAlien (int *pantalla, Bala *bales, Bala *bala, Flota_Al
 				if (aliens->forma[aliens->vides - (aliens->naus[i][j].viu)].punts[modY][modX] != 0) 
 				{
 					
-						//Desactivar, borrar la bala i carregar el canó
+						//Desactivar, borrar la bala i carregar el canï¿½
 					BorraTret(pantalla, bala->x, bala->y);
 					bales = eliminaBala(bales, bala);
 					cano->carregues += 1;
@@ -1855,7 +1855,7 @@ Bala *comprovarXocBalaAmbAlien (int *pantalla, Bala *bales, Bala *bala, Flota_Al
 						aliens->vius_files[i] -= 1;
 						aliens->vius_columnes[j] -= 1;
 						
-							//Augmentar la puntuació del jugador
+							//Augmentar la puntuaciï¿½ del jugador
 						cano->punts += PUNTUACIO_ALIEN_MORT;
 
 						if(!(aleatori(PROVABILITATS_MILLORA_SUPERBALA)-1))
@@ -1884,7 +1884,7 @@ Bala *comprovarXocBalaAmbAlien (int *pantalla, Bala *bales, Bala *bala, Flota_Al
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////Comprova si la bala especificada xoca amb el canó./////////////////////////////
+///////////////////////////Comprova si la bala especificada xoca amb el canï¿½./////////////////////////////
 /////////////////////////////////Retorna la llista de bales///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1896,20 +1896,20 @@ Bala *comprovarXocBalaAmbCano (int *pantalla, Bala *bales, Bala *bala, Nau_Propi
 	
 	PosaTretAliens(pantalla, bala->x, bala->y);
 	
-		//Obtenim la posició de la bala relativa al canó
+		//Obtenim la posiciï¿½ de la bala relativa al canï¿½
 	tmpX = bala->x - (cano->x - TAMANY_CANO/2);
 	tmpY = bala->y - (cano->y - TAMANY_CANO/2);
 	
-		//Comprovar si toca el canó
+		//Comprovar si toca el canï¿½
 	if ( (tmpX >= 0) && (tmpX < TAMANY_CANO) && (tmpY >= 0) ) 
 	{
-			//La bala està sobre el canó
+			//La bala estï¿½ sobre el canï¿½
 		
-			//Agafem el mòdul de la posició per saber si la bala coincideix amb el canó
+			//Agafem el mï¿½dul de la posiciï¿½ per saber si la bala coincideix amb el canï¿½
 		modX = tmpX % TAMANY_CANO;
 		modY = tmpY % TAMANY_CANO;
 		
-			//Comprovem si TOCA el canó
+			//Comprovem si TOCA el canï¿½
 		if (cano->forma.punts[modY][modX] != 0) 
 		{
 			
@@ -2003,7 +2003,7 @@ Bala *moureBales (int *pantalla, Bala *bales, Nau_Propia *cano, Flota_Alien *ali
 		if (tmp->velocitat<0) 
 		{
 			
-				//Moure tret del canó
+				//Moure tret del canï¿½
 			BorraTret(pantalla, tmp->x, tmp->y);
 			
 			tmp->y += tmp->velocitat;
@@ -2194,7 +2194,7 @@ Jugador *afegirPuntuacioJugador(Jugador *primer, char *nom, int puntuacio)
 	t = localtime(&sec);
 	strftime(nou->data, 19, "%d/%m/%Y", t);
 
-	//Buscar la posició on ha d'anar
+	//Buscar la posiciï¿½ on ha d'anar
 	if(primer == NULL)
 	{
 		primer = nou;
@@ -2351,7 +2351,7 @@ void escriurePuntuacions(Jugador *primer)
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////Mou tots els objectes i comprova si el canó n'agafa cap.///////////////////////
+///////////////////////////Mou tots els objectes i comprova si el canï¿½ n'agafa cap.///////////////////////
 ///////////////////////////////////Retorna la llista d'objectes///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2363,7 +2363,7 @@ Objecte *moureObjectes (int *pantalla, Objecte *primer, Nau_Propia *cano, Bunker
 	int objecteActiu;
 	int tmpX, tmpY, dX, dY, modX;
 	
-		//Actualitzar les millores actives del canó
+		//Actualitzar les millores actives del canï¿½
 	if(cano->temps_millora > 0)
 		cano->temps_millora -= 1;
 	else
@@ -2409,7 +2409,7 @@ Objecte *moureObjectes (int *pantalla, Objecte *primer, Nau_Propia *cano, Bunker
 			}
 			else
 			{
-					//Mirar si està sobre d'un bunker
+					//Mirar si estï¿½ sobre d'un bunker
 				dX = tmpX - bunker->x;
 				dY = (tmpY+1) - bunker->y;
 				if(dX >= 0 && dX < AMPLADA_BUNKER && dY >= 0 && dY < TAMANY_ESCUT)
@@ -2469,7 +2469,7 @@ Objecte *moureObjectes (int *pantalla, Objecte *primer, Nau_Propia *cano, Bunker
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////Activa la millora especificada del canó////////////////////////////////////////
+///////////////////////////Activa la millora especificada del canï¿½////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2510,7 +2510,7 @@ void activarMilloraCano(int *pantalla, Nau_Propia *cano, int millora)
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////Desactiva totes les millores del canó//////////////////////////////////////////
+///////////////////////////Desactiva totes les millores del canï¿½//////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2823,7 +2823,7 @@ void jugarNivell_m(void)
 
 	if (raoJocAcabat == RAO_JOC_ACABAT_NO_ACABAT)
 		raoJocAcabat = RAO_JOC_ACABAT_GUANYAT;
-		//Escriure la raó per la que ha finalitzat el joc
+		//Escriure la raï¿½ per la que ha finalitzat el joc
 	system("cls");
 	switch (raoJocAcabat) 
 	{
@@ -2837,7 +2837,7 @@ void jugarNivell_m(void)
 			printf("Has destruit els aliens abans que arribessin!.\n");
 			break;
 		case RAO_JOC_ACABAT_MORT:
-			printf("Has perdut totes les teves vides, els alienígenes han guanyat.\n");
+			printf("Has perdut totes les teves vides, els alienï¿½genes han guanyat.\n");
 			break;
 	}
 
@@ -2870,7 +2870,7 @@ void jugarPartida_m(void)
 	if(raoJocAcabat == RAO_JOC_ACABAT_NO_ACABAT)
 		jugar_m (&acabarJoc, &raoJocAcabat, 3);
 	
-		//Escriure la raó per la que ha finalitzat el joc
+		//Escriure la raï¿½ per la que ha finalitzat el joc
 	system("cls");
 	
 	if(raoJocAcabat == RAO_JOC_ACABAT_NO_ACABAT)
@@ -2889,7 +2889,7 @@ void jugarPartida_m(void)
 			printf("Has destruit els aliens abans que arribessin!.\n");
 			break;
 		case RAO_JOC_ACABAT_MORT:
-			printf("Has perdut totes les teves vides, els alienígenes han guanyat.\n");
+			printf("Has perdut totes les teves vides, els alienï¿½genes han guanyat.\n");
 			break;
 	}
 	
@@ -2900,7 +2900,7 @@ void jugarPartida_m(void)
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////Multijugador///////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////Funció del joc: bucle principal////////////////////////////////////////////////
+///////////////////////////Funciï¿½ del joc: bucle principal////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2997,7 +2997,7 @@ void jugar_m (int *acabarJoc, int *raoJocAcabat, int nivell)
 	buidarBales(bales);
 	bales = NULL;
 
-		//Actualitzar la puntuació general
+		//Actualitzar la puntuaciï¿½ general
 
 }
 
@@ -3071,7 +3071,7 @@ void dibuixarPantalla_m (int *pantalla, Nau_Propia cano[MAX_JUGADORS], Flota_Ali
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////Multijugador///////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////Inicialitza els dibuixos del canó//////////////////////////////////////////////
+///////////////////////////Inicialitza els dibuixos del canï¿½//////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3232,7 +3232,7 @@ void prepararJoc_m (int *pantalla, Nau_Propia cano[MAX_JUGADORS], Flota_Alien *a
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////Multijugador///////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////Crea i situa una bala pel canó especificat.////////////////////////////////////
+///////////////////////////Crea i situa una bala pel canï¿½ especificat.////////////////////////////////////
 ////////////////////////////////////Retorna la llista de bales////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3523,20 +3523,20 @@ Bala *comprovarXocBalaAmbCano_m (int *pantalla, Bala *bales, Bala *bala, Nau_Pro
 	
 	if(cano[0].vides)
 	{
-			//Obtenim la posició de la bala relativa al canó
+			//Obtenim la posiciï¿½ de la bala relativa al canï¿½
 		tmpX = bala->x - (cano[0].x - TAMANY_CANO/2);
 		tmpY = bala->y - (cano[0].y - TAMANY_CANO/2);
 		
-			//Comprovar si toca el canó
+			//Comprovar si toca el canï¿½
 		if ( (tmpX >= 0) && (tmpX < TAMANY_CANO) && (tmpY >= 0) ) 
 		{
-				//La bala està sobre el canó
+				//La bala estï¿½ sobre el canï¿½
 			
-				//Agafem el mòdul de la posició per saber si la bala coincideix amb el canó
+				//Agafem el mï¿½dul de la posiciï¿½ per saber si la bala coincideix amb el canï¿½
 			modX = tmpX % TAMANY_CANO;
 			modY = tmpY % TAMANY_CANO;
 			
-				//Comprovem si TOCA el canó
+				//Comprovem si TOCA el canï¿½
 			if (cano[0].forma.punts[modY][modX] != 0) 
 			{
 				
@@ -3555,20 +3555,20 @@ Bala *comprovarXocBalaAmbCano_m (int *pantalla, Bala *bales, Bala *bala, Nau_Pro
 
 	if (cano[1].vides)
 	{
-			//Obtenim la posició de la bala relativa al canó 2
+			//Obtenim la posiciï¿½ de la bala relativa al canï¿½ 2
 		tmpX = bala->x - (cano[1].x - TAMANY_CANO/2);
 		tmpY = bala->y - (cano[1].y - TAMANY_CANO/2);
 		
-			//Comprovar si toca el canó
+			//Comprovar si toca el canï¿½
 		if ( (tmpX >= 0) && (tmpX < TAMANY_CANO) && (tmpY >= 0) ) 
 		{
-				//La bala està sobre el canó
+				//La bala estï¿½ sobre el canï¿½
 			
-				//Agafem el mòdul de la posició per saber si la bala coincideix amb el canó
+				//Agafem el mï¿½dul de la posiciï¿½ per saber si la bala coincideix amb el canï¿½
 			modX = tmpX % TAMANY_CANO;
 			modY = tmpY % TAMANY_CANO;
 			
-				//Comprovem si TOCA el canó
+				//Comprovem si TOCA el canï¿½
 			if (cano[1].forma.punts[modY][modX] != 0) 
 			{
 				
@@ -3648,7 +3648,7 @@ Bala *moureBales_m (int *pantalla, Bala *bales, Nau_Propia cano[MAX_JUGADORS], F
 		if (tmp->velocitat<0) 
 		{
 			
-				//Moure tret del canó
+				//Moure tret del canï¿½
 			BorraTret(pantalla, tmp->x, tmp->y);
 			
 			tmp->y += tmp->velocitat;
@@ -4300,7 +4300,7 @@ Bala *moureBalesFSM (int *pantalla, Bala *bales, Nau_Propia *cano, Bunker *bunke
 		if (tmp->velocitat<0) 
 		{
 			
-				//Moure tret del canó
+				//Moure tret del canï¿½
 			BorraTret(pantalla, tmp->x, tmp->y);
 			
 			tmp->y += tmp->velocitat;
@@ -4349,7 +4349,7 @@ Bala *moureBalesFSM (int *pantalla, Bala *bales, Nau_Propia *cano, Bunker *bunke
 					
 					if (tmp->velocitat < 0) 
 					{
-							// Comprovar el xoc de les bales del canó
+							// Comprovar el xoc de les bales del canï¿½
 						
 						PosaTretCano(pantalla, tmp->x, tmp->y);
 
@@ -4449,7 +4449,7 @@ Bala *comprovarXocBalaAmbEscutFSM (int *pantalla, Bala *bales, Bala *bala, Bunke
 		&& (bala->x >= bunker->x) && (bala->y < (bunker->y + TAMANY_ESCUT)) && (bala->y >= bunker->y) ) 
 	{
 		
-			//Mirar si està sobre un escut
+			//Mirar si estï¿½ sobre un escut
 		tmpX = bala->x - bunker->x;
 		tmpY = bala->y - bunker->y;
 		
@@ -4498,7 +4498,7 @@ Bala *comprovarXocBalaAmbEscutFSM (int *pantalla, Bala *bales, Bala *bala, Bunke
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////Nivell extra///////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////Comprova si la bala especificada xoca amb el canó./////////////////////////////
+///////////////////////////Comprova si la bala especificada xoca amb el canï¿½./////////////////////////////
 /////////////////////////////////////Retorna la llista de bales///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4510,20 +4510,20 @@ Bala *comprovarXocBalaAmbCanoFSM (int *pantalla, Bala *bales, Bala *bala, Nau_Pr
 	
 	PosaTretAliens(pantalla, bala->x, bala->y);
 	
-		//Obtenim la posició de la bala relativa al canó
+		//Obtenim la posiciï¿½ de la bala relativa al canï¿½
 	tmpX = bala->x - (cano->x - TAMANY_CANO/2);
 	tmpY = bala->y - (cano->y - TAMANY_CANO/2);
 	
-		//Comprovar si toca el canó
+		//Comprovar si toca el canï¿½
 	if ( (tmpX >= 0) && (tmpX < TAMANY_CANO) && (tmpY >= 0) ) 
 	{
-			//La bala està sobre el canó
+			//La bala estï¿½ sobre el canï¿½
 		
-			//Agafem el mòdul de la posició per saber si la bala coincideix amb el canó
+			//Agafem el mï¿½dul de la posiciï¿½ per saber si la bala coincideix amb el canï¿½
 		modX = tmpX % TAMANY_CANO;
 		modY = tmpY % TAMANY_CANO;
 		
-			//Comprovem si TOCA el canó
+			//Comprovem si TOCA el canï¿½
 		if (cano->forma.punts[modY][modX] != 0) 
 		{
 			
