@@ -1,4 +1,4 @@
-/* Roc Ramon Currius 1241370 */
+/* Roc Ramon Currius */
 #include "RutinesINVADERS_v1.h"
 
 
