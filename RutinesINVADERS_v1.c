@@ -1,4 +1,4 @@
-/* Roc Ramon Currius 1241370, Gerardo Felix Reichl 1245142 */
+/* Roc Ramon Currius 1241370 */
 #include "RutinesINVADERS_v1.h"
 
 
@@ -381,9 +381,9 @@ char ObtenirCaracter(int IntIN)
 //===================================================================================
 // DATA: 02 / 12 / 2008
 //===================================================================================
-// DESCRIPCIO: ALERTA!! Aquesta versió és nova!! Abans la funció PosaPersonatge 
+// DESCRIPCIO: ALERTA!! Aquesta versiï¿½ ï¿½s nova!! Abans la funciï¿½ PosaPersonatge 
 // situava directament el personatge sobre el monitor, mentre que ara el posa a la 
-// matriu. Vegeu, per tant, que ara passem un paràmetre extra a fla funció: la matriu
+// matriu. Vegeu, per tant, que ara passem un parï¿½metre extra a fla funciï¿½: la matriu
 // de pantalla!
 //===================================================================================
 void PosaPersonatge(int Personatge[MidaPers][MidaPers],int Pantalla[AlssadaPantalla][AmpladaPantalla],int x,int y)
