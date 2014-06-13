@@ -13,3 +13,9 @@ I tried porting it to the unix terminal years ago but didn't work very well. If 
 contact me.
 
 I'll maybe also add a compiled code for the thing.
+
+
+Video
+-----
+
+Watch it at [[https://www.youtube.com/watch?v=y-Eq1QMu-uQ]]. It doesn't show the secret level. I'll make a video of it some time.
